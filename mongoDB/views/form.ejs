@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="/stylesheets/form.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="flex justify-center mt-6 text-4xl font-semibold">Create a New Blog Post</h1>
+    </header>
+
+    <section class="form-section ">
+        <form action="submit" class="flex flex-col justify-center" method="post">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="body">Body</label>
+            <textarea class="p-4" id="body" name="body" rows="8" required></textarea>
+
+            <button type="submit" class="submit-button w-full mt-4 mx-auto">Submit</button>
+        </form>
+    </section>
+</body>
+
+</html>
