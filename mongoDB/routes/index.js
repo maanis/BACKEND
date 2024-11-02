@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var userModel = require('./users')
+// var userModel = require('./users')
+import userModel from 'users'
 /* GET home page. */
 router.get('/', async function (req, res, next) {
   let users = await userModel.create({
