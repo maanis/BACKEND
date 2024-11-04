@@ -21,7 +21,7 @@
             <!-- Profile Picture Upload -->
             <div class="flex items-center mb-6">
                 <div class="w-20 h-20 rounded-full bg-zinc-700 overflow-hidden">
-                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-full h-full object-cover">
+                    <img src="/images/uploads/<%=imgurl %>" alt="Profile Picture" class="w-full h-full object-cover">
                 </div>
                 <div class="ml-4">
                     <label class="text-blue-500 cursor-pointer hover:underline" for="profile-picture">Change Profile
@@ -32,7 +32,7 @@
             <!-- Name -->
             <div class="mb-4">
                 <label for="name" class="block text-sm font-medium text-zinc-300">Name</label>
-                <input type="text" id="name" name="name"
+                <input type="text" value="<%= name %>" id="name" name="name"
                     class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Full Name" required>
             </div>
@@ -40,7 +40,7 @@
             <!-- Username -->
             <div class="mb-4">
                 <label for="username" class="block text-sm font-medium text-zinc-300">Username</label>
-                <input type="text" id="username" name="username"
+                <input type="text" value="<%=username %>" id="username" name="username"
                     class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Username" required>
             </div>
@@ -49,8 +49,8 @@
             <div class="mb-4">
                 <label for="bio" class="block text-sm font-medium text-zinc-300">Bio</label>
                 <textarea id="bio" name="bio" rows="3"
-                    class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Write something about yourself"></textarea>
+                    class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 resize-none text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Write something about yourself"><%= bio %></textarea>
             </div>
 
             <!-- email -->

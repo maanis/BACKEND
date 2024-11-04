@@ -13,7 +13,7 @@
 
     <!-- Profile Header -->
     <div class="max-w-3xl mx-auto p-4">
-        <div class="flex items-center space-x-8">
+        <div class="flex items-center justify-center space-x-8">
             <!-- Profile Picture -->
             <div class="w-24 h-24 rounded-full bg-zinc-700 overflow-hidden">
                 <img src="/images/uploads/<%=imgurl %>" alt="User profile picture" class="w-full h-full object-cover">
@@ -39,21 +39,35 @@
 
                 <!-- Follower Counts -->
                 <div class="flex space-x-8 mt-4">
-                    <div><span class="font-semibold text-white">150</span> posts</div>
-                    <div><span class="font-semibold text-white">1,200</span> followers</div>
-                    <div><span class="font-semibold text-white">300</span> following</div>
+                    <div><span class="font-semibold text-white">
+                            <%=posts.length %>
+                        </span> posts</div>
+                    <div><span class="font-semibold text-white">
+                            <%= followers %>
+                        </span> followers</div>
+                    <div><span class="font-semibold text-white">
+                            <%= following%>
+                        </span> following</div>
                 </div>
 
                 <!-- Bio -->
                 <div class="mt-4">
-                    <p class="text-white font-semibold">
-                        <%=name %>
-                    </p>
+                    <div class="flex items-center gap-6 my-2">
+                        <p class="text-white font-semibold">
+                            <%=name %>
+                        </p>
+                        <a href="/create">
+                            <button
+                                class="px-4 py-1 bg-green-500 text-zinc-800 transition-all rounded font-semibold hover:bg-green-800 hover:text-zinc-200 capitalize">create
+                                post
+                            </button>
+                        </a>
+                    </div>
                     <% if (bio !='' ) { %>
                         <p class="text-zinc-400">
                             <%=bio %>
                         </p>
-                    <% } %>
+                        <% } %>
                             <p class="text-blue-500 hover:underline cursor-pointer">
                                 <%=email %>
                             </p>
@@ -62,27 +76,28 @@
         </div>
     </div>
 
-    <!-- Posts Grid -->
     <div class="max-w-3xl mx-auto p-4">
-        <div class="grid grid-cols-3 gap-2 md:gap-4">
-            <!-- Post 1 -->
-            <div class="relative w-full pt-[100%] bg-zinc-700 overflow-hidden">
-                <img src="https://via.placeholder.com/300" alt="Post image"
-                    class="absolute inset-0 w-full h-full object-cover hover:opacity-75 transition-opacity">
-            </div>
-            <!-- Post 2 -->
-            <div class="relative w-full pt-[100%] bg-zinc-700 overflow-hidden">
-                <img src="https://via.placeholder.com/300" alt="Post image"
-                    class="absolute inset-0 w-full h-full object-cover hover:opacity-75 transition-opacity">
-            </div>
-            <!-- Post 3 -->
-            <div class="relative w-full pt-[100%] bg-zinc-700 overflow-hidden">
-                <img src="https://via.placeholder.com/300" alt="Post image"
-                    class="absolute inset-0 w-full h-full object-cover hover:opacity-75 transition-opacity">
-            </div>
-            <!-- Repeat similar blocks for more posts -->
+        <div class="grid grid-cols-3 relative gap-2 md:gap-4">
+
+            <% if (post.length> 0) { %>
+                <% post.reverse().forEach((e)=> { %>
+
+                    <!-- Post 1 -->
+                    <div class="relative w-full pt-[100%] bg-zinc-700 overflow-hidden">
+                        <img src="/images/uploads/<%= e.posturl %>" alt="Post image"
+                            class="absolute inset-0 w-full h-full object-cover hover:opacity-75 transition-opacity">
+                    </div>
+                    <!-- Repeat similar blocks for more posts -->
+
+                    <% }) %>
+                        <% } else { %>
+                            <h2 class="w-full text-center block absolute">No current posts</h2>
+                            <% } %>
         </div>
     </div>
+
+    <!-- Posts Grid -->
+
 
 </body>
 
