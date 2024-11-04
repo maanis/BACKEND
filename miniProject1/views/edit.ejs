@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-zinc-900 text-zinc-200 min-h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-lg bg-zinc-800 rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-white mb-6 text-center">Edit Profile</h2>
+
+
+
+        <!-- Edit Form -->
+        <form action="/edit" method="POST" enctype="multipart/form-data">
+            <!-- Profile Picture Upload -->
+            <div class="flex items-center mb-6">
+                <div class="w-20 h-20 rounded-full bg-zinc-700 overflow-hidden">
+                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="w-full h-full object-cover">
+                </div>
+                <div class="ml-4">
+                    <label class="text-blue-500 cursor-pointer hover:underline" for="profile-picture">Change Profile
+                        Picture</label>
+                    <input type="file" name="pfp" id="profile-picture" class="hidden">
+                </div>
+            </div>
+            <!-- Name -->
+            <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-zinc-300">Name</label>
+                <input type="text" id="name" name="name"
+                    class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Full Name" required>
+            </div>
+
+            <!-- Username -->
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-zinc-300">Username</label>
+                <input type="text" id="username" name="username"
+                    class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Username" required>
+            </div>
+
+            <!-- Bio -->
+            <div class="mb-4">
+                <label for="bio" class="block text-sm font-medium text-zinc-300">Bio</label>
+                <textarea id="bio" name="bio" rows="3"
+                    class="w-full mt-1 px-4 py-2 rounded bg-zinc-700 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Write something about yourself"></textarea>
+            </div>
+
+            <!-- email -->
+
+
+            <!-- Submit Button -->
+            <button type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-300">
+                Update Profile
+            </button>
+        </form>
+    </div>
+
+</body>
+
+</html>

@@ -2,7 +2,15 @@ const mongoose = require('mongoose')
 
 
 let postSchema = mongoose.Schema({
-    content: String
+    content: String,
+    date: {
+        type: Date,
+        default: Date.now
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    }
 })
 
 module.exports = mongoose.model('posts', postSchema)
